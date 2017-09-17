@@ -1,0 +1,83 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 100px;
+        white-space: nowrap;
+        background-image: url(1804b.jpg);
+     	background-repeat: no-repeat;
+     	background-size: 1300px;
+     	background-position: -500px;
+      }
+
+      h1 { 	font-size: 30px;
+      		  color: white;
+      	 }
+      h2 { 	font-size: 15px; 
+      		  color: white;
+      	 }
+      
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
+      #container {
+       /* align-items: center;
+        display: flex;
+        justify-content: space-between;*/
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js">
+      chrome.browserAction.onClicked.addListener(function() {
+      chrome.tabs.create({'url': "https://www.cmha.bc.ca/mental-health/find-help/"});
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="container">
+    <img src="dog2.png" align="center">
+    <h1>Hi friend!</h1>
+      <h2>We're here to lend a hand!</h2>
+
+
+    <ul style="list-style: none;">
+      	<li><a href="https://www.cmha.bc.ca/mental-health/find-help/">Canadian Mental Health Association</a></li>
+
+        <li><a href="http://www.heretohelp.bc.ca/factsheet/getting-help-for-mental-illnesses">Here To Help</a></li>
+
+        <li><a href="http://www.bcmhsus.ca/">BC Mental Heath &amp; Substance Use Services</a></li>
+  	</ul>
+  	</div>
+</html>
